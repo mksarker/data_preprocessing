@@ -2,6 +2,7 @@ import os
 import cv2
 import skimage.color as color
 import numpy as np
+import png
 
 data_dir='path to the data directory'
 dest_dir='path to the destination directory'
@@ -22,6 +23,8 @@ for f in files:
 
     ## write image
     cv2.imwrite(dest_dir+f, im)
+    ### if problem with saving CV2 library then use PNG library
+    #png.from_array(img[:], 'L').save(dest_dir+fname+'.png')
     ## again read and check the conversion
     after=cv2.imread(dest_dir+f)
     unq=np.unique(after)
