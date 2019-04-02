@@ -10,6 +10,7 @@ dest_dir='path to the destination directory'
 files= os.listdir(data_dir)
 
 for f in files:
+    file_name = f.split('.')[0]
     ## read image
     im=cv2.imread(data_dir+f)
     ## conver image
@@ -24,7 +25,7 @@ for f in files:
     ## write image
     cv2.imwrite(dest_dir+f, im)
     ### if problem with saving CV2 library then use PNG library
-    #png.from_array(img[:], 'L').save(dest_dir+fname+'.png')
+    #png.from_array(img[:], 'L').save(dest_dir+file_name+'.png')
     ## again read and check the conversion
     after=cv2.imread(dest_dir+f)
     unq=np.unique(after)
