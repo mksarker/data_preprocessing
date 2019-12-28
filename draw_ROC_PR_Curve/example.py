@@ -1,5 +1,6 @@
-from autoMetric import fileList,drawCurve,CollectData
+## source code copied from https://github.com/DeepTrial/AutoMetric
 
+from autoMetric import fileList,drawCurve,CollectData
 
 
 if __name__=="__main__":
