@@ -20,9 +20,7 @@ singularity shell /logiciels/containerCollections/CUDA10/pytorch.sif  ## activat
 source activate /projets/thesepizenberg/EGO_OBJECT/enviroment/msarker  ### my own enviroment
 
 ## Install library
-TMPDIR=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ pip install --cache-dir=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ --build /projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ torch==1.1.0 
-
-
+TMPDIR=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ pip install --cache-dir=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ torchvision==0.3.0
 
 
 
