@@ -1,0 +1,28 @@
+singularity shell /logiciels/containerCollections/CUDA10/tf.sif   ## for tensorflow
+
+singularity shell /logiciels/containerCollections/CUDA10/pytorch.sif   ## for pytorch 
+
+
+singularity shell /logiciels/containerCollections/CUDA10/keras-tf.sif  ## for keras
+
+virtualenv3 --system-site-packages $HOME/ENVNAME
+
+conda3 activate  mksarker
+
+conda3 create -n msarker python=3.6
+
+conda create --prefix=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker python=3.6 ## for specefic ;ocation
+
+jupyter notebook --notebook-dir=/projets/thesepizenberg/EGO_OBJECT/ --no-browser --ip=127.0.0.1
+
+
+singularity shell /logiciels/containerCollections/CUDA10/pytorch.sif  ## activate shell
+source activate /projets/thesepizenberg/EGO_OBJECT/enviroment/msarker  ### my own enviroment
+
+## Install library
+TMPDIR=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ pip install --cache-dir=/projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ --build /projets/thesepizenberg/EGO_OBJECT/enviroment/msarker/ torch==1.1.0 
+
+
+
+
+
