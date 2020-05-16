@@ -12,9 +12,9 @@ from pytorch_memlab import MemReporter
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
-class TestResNetWrapper(unittest.TestCase):
+class TestWrapper(unittest.TestCase):
 
-    def test_resnet_wrapper(self):
+    def test_wrapper(self):
         net = EfficientNet.from_pretrained("efficientnet-b3")
 
         # print(net)
@@ -38,8 +38,8 @@ class TestResNetWrapper(unittest.TestCase):
         mem = mem_params + mem_bufs # in bytes
         print('Memory Size:', mem/1000000)
         ## Memory 
-        # reporter = MemReporter(net)
-        # reporter.report()
+        reporter = MemReporter(net)
+        reporter.report()
 
         ### model implementation
         x = net(x)
